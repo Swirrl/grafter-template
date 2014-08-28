@@ -44,5 +44,4 @@ You can then adapt the functions to your own examples
 
 Copyright © 2014 Swirrl IT Ltd.
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License version 1.0, the same as Clojure.
