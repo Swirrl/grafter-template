@@ -23,7 +23,7 @@
 ;; and basic URIs you'll need. Then you can adapt the Pipeline
 ;; function in the pipeline.clj file and the template in the
 ;; make-graph.clj. You can then adapt the filter in filter.clj if
-;; needed, and the import fonction above.
+;; needed, and the import function above.
 ;; Finally, you just have to call your new functions in the -main
 ;; function just here and run on your terminal:
 ;; $ lein run path-of-your-file name-of-your-RDF-graph
