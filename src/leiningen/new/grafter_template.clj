@@ -5,25 +5,33 @@
 (def render (renderer "grafter-template"))
 
 (defn grafter-template
-  "FIXME: write documentation"
+  ""
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
-    (main/info "Generating fresh project with Grafter's template.
+    (main/info
+"            ___           __ _
+           / __|_ _ __ _ / _| |_ ___ _ _
+          | (_ | '_/ _` |  _|  _/ -_) '_|
+           \\___|_| \\__,_|_|  \\__\\___|_|
 
-You can go to http://www.grafter.org to find some informations about Grafter, some documentation, the API and some tutorials.
+      MACHINE TOOLS FOR LINKED DATA MANUFACTURE
+                   grafter.org
 
-Grafter is still very young so any feedback is useful!
+Before you start building your grafter assembly line,
+check your installation by running:
 
-As a first step you can try our example: RDFization of the glasgow-life-facilities.csv you'll find in the data directory by running:
-\"$ lein run \"./data/glasgow-life-facilities.csv\" \"glasgow-life-facilities.ttl\"\"...
+$ cd " name "
 
-Then you can adapt any of the steps: pipeline, make-graph, prefixers, filter and core, for your own tabular files")
+$ lein run ./data/example-data.csv example-output.ttl
+
+")
     (->files data
              ["project.clj" (render "project.clj" data)]
+             ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
-             ["src/{{sanitized}}/filter.clj" (render "filter.clj" data)]
-             ["src/{{sanitized}}/make_graph.clj" (render "make_graph.clj" data)]
+             ["src/{{sanitized}}/graph.clj" (render "graph.clj" data)]
              ["src/{{sanitized}}/pipeline.clj" (render "pipeline.clj" data)]
-             ["src/{{sanitized}}/prefixers.clj" (render "prefixers.clj" data)]
-             ["data/glasgow-life-facilities.csv" (render "data/glasgow-life-facilities.csv")])))
+             ["src/{{sanitized}}/transform.clj" (render "transform.clj" data)]
+             ["data/example-data.csv" (render "example-data.csv" data)]
+             ["src/{{sanitized}}/prefix.clj" (render "prefix.clj" data)])))
