@@ -1,10 +1,10 @@
-(ns leiningen.new.grafter-template
+(ns leiningen.new.grafter
   (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
-(def render (renderer "grafter-template"))
+(def render (renderer "grafter"))
 
-(defn grafter-template
+(defn grafter
   ""
   [name]
   (let [data {:name name
@@ -24,7 +24,6 @@ check your installation by running:
 $ cd " name "
 
 $ lein run ./data/example-data.csv example-output.ttl
-
 ")
     (->files data
              ["project.clj" (render "project.clj" data)]

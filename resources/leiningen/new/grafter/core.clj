@@ -24,4 +24,4 @@
       make-graph
       (import-data output))
 
-  (println path "has been grafted using Grafter 0.2.0!"))
+  (println path "=>" output))
