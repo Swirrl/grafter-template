@@ -1,6 +1,7 @@
-# grafter-template
+# Grafter Leiningen Template
 
-A Leiningen template for [Grafter](http://www.grafter.org) pipelines.
+A Leiningen project template for [Grafter](http://www.grafter.org)
+pipelines.
 
 This template installs a simple project structure suitable for
 creating Grafter RDF transformations.
@@ -31,7 +32,7 @@ You will need to have leiningen
 
 Then simply run:
 
-    $ lein new grafter-template my-grafter-project
+    $ lein new grafter my-grafter-project
             ___           __ _
            / __|_ _ __ _ / _| |_ ___ _ _
           | (_ | '_/ _` |  _|  _/ -_) '_|
