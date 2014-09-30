@@ -32,7 +32,6 @@ You will need to have leiningen
 Then simply run:
 
     $ lein new grafter-template my-grafter-project
-
             ___           __ _
            / __|_ _ __ _ / _| |_ ___ _ _
           | (_ | '_/ _` |  _|  _/ -_) '_|
@@ -52,7 +51,17 @@ Then simply run:
 Grafter supports almost every RDF serialization and will infer the
 serialisation format from the output files file extension.
 
-You can then adapt the template to your own project needs.
+Supported formats include:
+
+- .n3 (N3)
+- .nq (NQuads)
+- .nt (NTriples)
+- .rdf (RDF XML)
+- .trig (Trig)
+- .trix (Trix)
+- .ttl (Turtle)
+
+Once installed you can adapt the template to your own project needs.
 
 ## License
 
