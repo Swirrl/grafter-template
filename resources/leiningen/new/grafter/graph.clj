@@ -20,9 +20,10 @@
 
 
 (def make-graph
-  (graph-fn [{:keys [name sex aged person-uri gender]}]
+  (graph-fn [{:keys [name sex age person-uri gender]}]
             (graph (base-graph "example")
                    [person-uri
                     [rdf:a foaf:Person]
                     [foaf:gender sex]
+                    [foaf:age age]
                     [foaf:name (s name)]])))
