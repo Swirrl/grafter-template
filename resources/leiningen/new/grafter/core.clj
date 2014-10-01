@@ -3,7 +3,8 @@
             [grafter.rdf :refer :all]
             [grafter.rdf.sesame :as ses]
             [{{name}}.graph :refer [make-graph]]
-            [{{name}}.pipeline :refer [pipeline]]))
+            [{{name}}.pipeline :refer [pipeline]])
+  (:gen-class))
 
 (defn import-data
   [quads-seq destination]
