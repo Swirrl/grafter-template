@@ -1,7 +1,7 @@
 (ns {{name}}.core
   (:require [grafter.tabular :refer :all]
             [grafter.rdf :refer :all]
-            [grafter.rdf.sesame :as ses]
+            [grafter.rdf.io :as io]
             [{{name}}.graph :refer [make-graph]]
             [{{name}}.pipeline :refer [pipeline]])
   (:gen-class))
@@ -12,7 +12,7 @@
                    ;;(filter remove-invalid-triples)
                    )]
 
-    (add (ses/rdf-serializer destination) quads)))
+    (add (io/rdf-serializer destination) quads)))
 
 
 (defn apply-pipeline [path]
@@ -20,7 +20,7 @@
       first
       pipeline))
 
-(defn apply-complete-transformation [path]
+(defpipeline apply-complete-transformation [path]
   (-> (apply-pipeline path)
       make-graph))
 

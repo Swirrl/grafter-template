@@ -1,13 +1,5 @@
 (ns {{name}}.prefix
-  (:require [grafter.rdf :refer [prefixer]]
-            [grafter.rdf.ontologies.rdf :refer :all]
-            [grafter.rdf.ontologies.void :refer :all]
-            [grafter.rdf.ontologies.dcterms :refer :all]
-            [grafter.rdf.ontologies.vcard :refer :all]
-            [grafter.rdf.ontologies.pmd :refer :all]
-            [grafter.rdf.ontologies.qb :refer :all]
-            [grafter.rdf.ontologies.os :refer :all]
-            [grafter.rdf.ontologies.sdmx-measure :refer :all]))
+  (:require [grafter.rdf :refer [prefixer]]))
 
 ;; Defines what will be useful for our next data transformations
 

@@ -1,8 +1,11 @@
 (ns {{name}}.pipeline
-  (:require [grafter.tabular :refer [column-names columns rows all-columns derive-column mapc swap drop-rows open-all-datasets make-dataset move-first-row-to-header _]]
-            [grafter.rdf :refer [graph-fn graph s]]
-            [{{name}}.prefix :refer :all]
-            [{{name}}.transform :refer [->integer]]))
+    (:require
+     [grafter.tabular :refer [column-names columns rows all-columns derive-column
+                              mapc swap drop-rows open-all-datasets make-dataset
+                              move-first-row-to-header _ graph-fn]]
+     [grafter.rdf :refer [s]]
+     [{{name}}.prefix :refer :all]
+     [{{name}}.transform :refer [->integer]]))
 
 ;; Pipeline modifies, for each row of the tabular file we are working
 ;; on, the columns, so we can access or add the exact data we need
