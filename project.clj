@@ -1,4 +1,4 @@
-(defproject grafter/lein-template "0.1.0-SNAPSHOT"
+(defproject grafter/lein-template "0.2.0"
   :description "Leiningen template for a simple grafter project"
   :url "http://grafter.org/"
   :license {:name "Eclipse Public License"
