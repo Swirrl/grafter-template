@@ -8,5 +8,8 @@
                  [org.slf4j/slf4j-jdk14 "1.7.5"]]
 
   :repl-options {:init (set! *print-length* 200)}
+
+  :plugins [[lein-grafter "0.1.0-SNAPSHOT"]]
+
   :main {{name}}.core
   :aot [{{name}}.core])
