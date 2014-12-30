@@ -1,7 +1,7 @@
 (ns {{name}}.pipeline
     (:require
      [grafter.tabular :refer [defpipeline column-names columns rows all-columns derive-column
-                              mapc swap drop-rows open-dataset open-datasets make-dataset
+                              mapc swap drop-rows read-dataset read-datasets make-dataset
                               move-first-row-to-header _ graph-fn]]
      [grafter.rdf :refer [s]]
      [grafter.rdf.templater :refer [graph]]
@@ -33,10 +33,10 @@
 ;; Tutorial
 ;; http://grafter.org/tutorials/906_pipeline.html
 
-(defpipeline pipeline
+(defpipeline import-persons-data
   "An example pipeline that converts person data."
-  [spreadsheet]
-  (-> (open-dataset spreadsheet)
+  [data-file]
+  (-> (read-dataset data-file)
       (drop-rows 1)
       (make-dataset [:name :sex :age])
       (derive-column :person-uri [:name] base-id)
