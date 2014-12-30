@@ -23,13 +23,11 @@ check your installation by running:
 
 $ cd " name "
 
-$ lein run ./data/example-data.csv example-output.ttl
+$ lein grafter run ./data/example-data.csv example-output.ttl
 ")
     (->files data
              ["project.clj" (render "project.clj" data)]
              ["README.md" (render "README.md" data)]
-             ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
-             ["src/{{sanitized}}/graph.clj" (render "graph.clj" data)]
              ["src/{{sanitized}}/pipeline.clj" (render "pipeline.clj" data)]
              ["src/{{sanitized}}/transform.clj" (render "transform.clj" data)]
              ["data/example-data.csv" (render "example-data.csv" data)]
