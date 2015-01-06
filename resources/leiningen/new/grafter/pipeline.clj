@@ -1,7 +1,8 @@
 (ns {{name}}.pipeline
     (:require
-     [grafter.tabular :refer [defpipeline column-names columns rows all-columns derive-column
-                              mapc swap drop-rows read-dataset read-datasets make-dataset
+     [grafter.tabular :refer [defpipe defgraft column-names columns rows
+                              all-columns derive-column mapc swap drop-rows
+                              read-dataset read-datasets make-dataset
                               move-first-row-to-header _ graph-fn]]
      [grafter.rdf :refer [s]]
      [grafter.rdf.templater :refer [graph]]
@@ -33,8 +34,8 @@
 ;; Tutorial
 ;; http://grafter.org/tutorials/906_pipeline.html
 
-(defpipeline import-persons-data
-  "An example pipeline that converts person data."
+(defpipe convert-persons-data
+  "Pipeline to convert tabular persons data into a different tabular format."
   [data-file]
   (-> (read-dataset data-file)
       (drop-rows 1)
@@ -42,5 +43,8 @@
       (derive-column :person-uri [:name] base-id)
       (mapc {:age ->integer
              :sex {"f" (s "female")
-                   "m" (s "male")}})
-      make-graph))
+                   "m" (s "male")}})))
+
+(defgraft convert-persons-data-to-graph
+  "Pipeline to convert the tabular persons data sheet into graph data."
+  convert-persons-data make-graph)
