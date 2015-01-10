@@ -7,6 +7,7 @@
                  [grafter "0.3.0-SNAPSHOT"]
                  [org.slf4j/slf4j-jdk14 "1.7.5"]]
 
-  :repl-options {:init (set! *print-length* 200)}
+  :repl-options {:init (set! *print-length* 200)
+                 :init-ns {{name}}.pipeline }
 
   :plugins [[lein-grafter "0.3.0-SNAPSHOT"]])
