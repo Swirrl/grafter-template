@@ -6,6 +6,7 @@
                               move-first-row-to-header _ graph-fn
                               test-dataset]]
      [grafter.rdf :refer [s]]
+     [grafter.rdf.protocols :refer [->Quad]]
      [grafter.rdf.templater :refer [graph]]
      [grafter.rdf.ontologies.rdf :refer :all]
      [grafter.rdf.ontologies.foaf :refer :all]
