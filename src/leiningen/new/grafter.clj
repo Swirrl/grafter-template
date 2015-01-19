@@ -30,7 +30,7 @@ To run the example pipeline defined in this project run:
 
 $ cd " name "
 
-$ lein grafter run " name ".pipeline/import-persons-data ./data/example-data.csv example-output.ttl
+$ lein grafter run " name ".pipeline/convert-persons-data ./data/example-data.csv example-output.ttl
 
 "))
     (->files data
