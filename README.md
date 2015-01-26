@@ -27,10 +27,17 @@ Into this RDF:
 
 ## Usage
 
-You will need to have leiningen
-[installed](http://leiningen.org/#install) as a prerequisite.
+For information on how to use this plugin and what benefits it brings,
+please consult the
+[Grafter Getting Started Guide](http://grafter.org/getting-started)
 
-Then simply run:
+The latest version of this plugin is:
+
+[![Clojars Project](http://clojars.org/grafter/lein-template/latest-version.svg)](http://clojars.org/grafter/lein-template)
+
+However you'll seldom need to know that, so long as you have have
+leiningen [installed](http://leiningen.org/#install) as a
+prerequisite you can simply run the command:
 
     $ lein new grafter my-grafter-project
             ___           __ _
@@ -48,6 +55,11 @@ Then simply run:
 
      $ lein run ./data/example-data.csv example-output.ttl
      ./data/example-data.csv => output.ttl
+
+If you want to run a bleeding edge snapshot version of the plugin and
+Grafter you can run the following:
+
+    $ lein new grafter my-grafter-project --snapshot
 
 Grafter supports almost every RDF serialization and will infer the
 serialisation format from the output files file extension.
