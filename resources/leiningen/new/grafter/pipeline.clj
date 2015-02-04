@@ -16,9 +16,6 @@
 ;; Declare our graph template which will destructure each row and
 ;; convert it into an RDF graph.  This will be the final step in our
 ;; pipeline definition.
-;;
-;; Tutorial
-;; http://grafter.org/tutorials/907_graph.html
 
 (def make-graph
   (graph-fn [{:keys [name sex age person-uri gender]}]
@@ -29,13 +26,9 @@
                     [foaf:age age]
                     [foaf:name (s name)]])))
 
-;; Pipeline modifies, for each row of the tabular file we are working
-;; on, the columns, so we can access or add the exact data we need
-;; for our templates.
-;;
-;; Tutorial
-;; http://grafter.org/tutorials/906_pipeline.html
 
+;; Declare a pipe so the plugin can find and run it.  It's just a
+;; function from Datasetable -> Dataset.
 (defpipe convert-persons-data
   "Pipeline to convert tabular persons data into a different tabular format."
   [data-file]
@@ -47,6 +40,8 @@
              :sex {"f" (s "female")
                    "m" (s "male")}})))
 
+;; Declare a graft so the plugin can find and run it.  A graft is the
+;; composition of a pipe with graph-fn graph template.
 (defgraft convert-persons-data-to-graph
   "Pipeline to convert the tabular persons data sheet into graph data."
   convert-persons-data make-graph)
