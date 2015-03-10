@@ -8,8 +8,8 @@
      [grafter.rdf :refer [s]]
      [grafter.rdf.protocols :refer [->Quad]]
      [grafter.rdf.templater :refer [graph]]
-     [grafter.rdf.ontologies.rdf :refer :all]
-     [grafter.rdf.ontologies.foaf :refer :all]
+     [grafter.vocabularies.rdf :refer :all]
+     [grafter.vocabularies.foaf :refer :all]
      [{{name}}.prefix :refer [base-id base-graph base-vocab base-data]]
      [{{name}}.transform :refer [->integer]]))
 
