@@ -11,4 +11,14 @@
   :repl-options {:init (set! *print-length* 200)
                  :init-ns {{name}}.pipeline }
 
-  :plugins [[lein-grafter "0.4.0"]])
+  :jvm-opts ^:replace ["-server"
+                       ;;"-XX:+AggressiveOpts"
+                       ;;"-XX:+UseFastAccessorMethods"
+                       ;;"-XX:+UseCompressedOops"
+                       ;;"-Xmx4g"
+                       ]
+
+  :plugins [[lein-grafter "0.4.0"]]
+
+
+  )
