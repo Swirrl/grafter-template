@@ -1,9 +1,9 @@
 (ns {{name}}.pipeline
     (:require
      [grafter.tabular :refer [defpipe defgraft column-names columns rows
-                              all-columns derive-column mapc swap drop-rows
+                              derive-column mapc swap drop-rows
                               read-dataset read-datasets make-dataset
-                              move-first-row-to-header _ graph-fn
+                              move-first-row-to-header _ graph-fn melt
                               test-dataset]]
      [grafter.rdf :refer [s]]
      [grafter.rdf.protocols :refer [->Quad]]
