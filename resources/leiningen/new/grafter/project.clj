@@ -19,6 +19,6 @@
                        ]
 
   :plugins [[lein-grafter "0.5.0"]]
-
+  :min-lein-version "2.5.1"
 
   )
