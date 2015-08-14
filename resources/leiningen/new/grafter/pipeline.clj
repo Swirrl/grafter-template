@@ -1,10 +1,11 @@
 (ns {{name}}.pipeline
     (:require
-     [grafter.tabular :refer [defpipe defgraft column-names columns rows
-                              derive-column mapc swap drop-rows
-                              read-dataset read-datasets make-dataset
-                              move-first-row-to-header _ graph-fn melt
-                              test-dataset]]
+     [grafter.tabular :refer [_ add-column add-columns apply-columns
+                              build-lookup-table column-names columns
+                              derive-column drop-rows graph-fn grep make-dataset
+                              mapc melt move-first-row-to-header read-dataset
+                              read-datasets rows swap swap take-rows
+                              test-dataset test-dataset]]
      [grafter.rdf :refer [s]]
      [grafter.rdf.protocols :refer [->Quad]]
      [grafter.rdf.templater :refer [graph]]
@@ -29,7 +30,7 @@
 
 ;; Declare a pipe so the plugin can find and run it.  It's just a
 ;; function from Datasetable -> Dataset.
-(defpipe convert-persons-data
+(defn convert-persons-data
   "Pipeline to convert tabular persons data into a different tabular format."
   [data-file]
   (-> (read-dataset data-file)
@@ -42,6 +43,6 @@
 
 ;; Declare a graft so the plugin can find and run it.  A graft is the
 ;; composition of a pipe with graph-fn graph template.
-(defgraft convert-persons-data-to-graph
+(defn convert-persons-data-to-graph [dataset]
   "Pipeline to convert the tabular persons data sheet into graph data."
-  convert-persons-data make-graph)
+  (-> dataset convert-persons-data make-graph))
