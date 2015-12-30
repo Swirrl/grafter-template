@@ -37,6 +37,7 @@ $ lein grafter run " name ".pipeline/convert-persons-data ./data/example-data.cs
 "))
     (->files data
              ["project.clj" (render "project.clj" data)]
+             ["grafter-config.edn" (render "grafter-config.edn" data)]
              ["README.md" (render "README.md" data)]
              ["src/{{sanitized}}/pipeline.clj" (render "pipeline.clj" data)]
              ["src/{{sanitized}}/transform.clj" (render "transform.clj" data)]

@@ -9,6 +9,7 @@
      [grafter.rdf :refer [s]]
      [grafter.rdf.protocols :refer [->Quad]]
      [grafter.rdf.templater :refer [graph]]
+     [grafter.pipeline :refer [declare-pipeline]]
      [grafter.vocabularies.rdf :refer :all]
      [grafter.vocabularies.foaf :refer :all]
      [{{name}}.prefix :refer [base-id base-graph base-vocab base-data]]
@@ -41,8 +42,13 @@
              :sex {"f" (s "female")
                    "m" (s "male")}})))
 
-;; Declare a graft so the plugin can find and run it.  A graft is the
-;; composition of a pipe with graph-fn graph template.
-(defn convert-persons-data-to-graph [dataset]
+(declare-pipeline convert-persons-data [Dataset -> Dataset]
+                  {data-file "A data file"})
+
+(defn convert-persons-data-to-graph
   "Pipeline to convert the tabular persons data sheet into graph data."
+  [dataset]
   (-> dataset convert-persons-data make-graph))
+
+(declare-pipeline convert-persons-data-to-graph [Dataset -> (Seq Statement)]
+                  {dataset "The data file to convert into a graph."})
