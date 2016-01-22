@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [grafter "0.6.0-alpha5"]
+                 [grafter "0.6.0"]
                  [grafter/vocabularies "0.1.3"]
                  ;;[grafter/vocabularies "0.1.4-SNAPSHOT"]
                  [org.slf4j/slf4j-jdk14 "1.7.5"]]
@@ -19,7 +19,7 @@
                        ;;"-Xmx4g"
                        ]
 
-  :plugins [[lein-grafter "0.6.0-SNAPSHOT"]]
+  :plugins [[lein-grafter "0.6.0"]]
   :min-lein-version "2.5.1"
 
   )
