@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [grafter "0.7.4"]
+                 [grafter "0.7.6"]
                  [grafter/vocabularies "0.1.5"]
                  ;;[grafter/vocabularies "0.1.4-SNAPSHOT"]
                  [org.slf4j/slf4j-jdk14 "1.7.5"]]
